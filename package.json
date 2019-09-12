@@ -20,7 +20,8 @@
     "mime": "^2.4.4",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
-    "serialize": "^0.1.3"
+    "serialize": "^0.1.3",
+    "sequelize": "^4.41.2"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.1",
