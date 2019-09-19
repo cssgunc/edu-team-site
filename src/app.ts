@@ -1,21 +1,30 @@
+import bodyParser = require("body-parser");
 import express = require("express");
+import path from "path";
+
+import index from "./controllers/index";
 
 const app = express();
 
 /**
- * TODO
- * Setup server parsing and logging
+ * Express Middleware Configuration
  */
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.set( "views", path.join( __dirname, "views" ) );
+app.set( "view engine", "ejs" );
+
+// app.use(express.static("/views"));
+app.use("/static", express.static("static"));
 
 /**
  * API Routes
  */
-/**
- * TODO
- * Abstract routes into cont
- */
+app.use("/", index);
+
 app.get("/", (req, res) => {
-    res.send("<p>Hello world!</p>");
+    res.render("index.ejs");
 });
 
 export { app };
