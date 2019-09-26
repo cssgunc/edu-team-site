@@ -1,9 +1,9 @@
 // const Sequelize       = require("sequelize");
 // const Profiles        = require("../models/profiles");
 
-import { Sequelize, Options } from 'sequelize';
+import { Options, Sequelize } from "sequelize";
 // import Profiles from '../models/'
-import { Profile } from '../models/profiles';
+import { Profile } from "../models/profiles";
 
 if (!process.env.DATABASE_URL) {
     require("dotenv").config();
@@ -28,7 +28,7 @@ const options = {
     },
     operatorsAliases: false,
     logging: false,
-    host: '',
+    host: "",
     port: 3000,
 };
 
