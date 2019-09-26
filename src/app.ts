@@ -24,7 +24,11 @@ app.use("/static", express.static("static"));
 app.use("/", index);
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {name: ""});
+});
+
+app.get("/:name", (req, res) => {
+    res.render("index.ejs", {name: req.params.name});
 });
 
 export { app };
