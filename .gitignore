@@ -1,6 +1,9 @@
 # Build from tcs
 dist/**/*
 
+# VS code directories
+.vs/**/*
+
 # API keys and secrets
 .env
 
