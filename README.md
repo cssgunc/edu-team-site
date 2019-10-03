@@ -1,5 +1,13 @@
 # Edu Team Site
 
+## Required global libraries
+
+* gulp-cli
+
+## FAQs / Basic Troubleshooting
+
+**Help! I'm getting the error (another port running on same) EACCESS**
+
 ## Groundwork (To Do)
 
 ### Backend
