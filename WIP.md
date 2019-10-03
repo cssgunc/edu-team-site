@@ -7,12 +7,14 @@
 * Gulp build system
 * WIP (Work in Progress) tracker
 * Removed `tools/` directory and copy-assets script
+* Sequelize models registered and initialized with PostgreSQL
+* Tutorial controller available to view profile entries in DB
 
 **Required Functionality**
 
 * ~~Add npm script to automatically copy static / `*.ejs` files from src/ to dist/~~
-* Fix bugs with `sequelize` library and code
-* Remove unnecessary `nothing.txt` placeholders where possible
+* ~~Fix bugs with `sequelize` library and code~~
+* ~~Remove unnecessary `nothing.txt` placeholders where possible~~
 * Add SASS/SCSS preprocessing capability for styling
 * Test functionality for abstracting stylesheets away from inline `*.ejs` code
 
