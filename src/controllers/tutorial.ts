@@ -36,6 +36,20 @@ router.get("/profiles", (req, res) => {
     });
 });
 
+router.get("/profiles/id/:id", (req, res) => {
+    // Query for specific profile matching with ID
+    const profileId = req.params.id;
+    ProfileORM.findOne({
+        where: {
+            id: profileId,
+        },
+    }).then((p) => {
+        res.send(`<b>${p.lastName}, ${p.firstName}</b>`);
+    }).catch((err) => {
+        res.send(`ERROR: DB Query Failed. <br> ${err}`);
+    });
+});
+
 // Demo Part 2 - Styled render with EJS templating view
 router.get("/profiles/pretty", (req, res) => {
     // Get all Profile entries from DB
@@ -45,6 +59,20 @@ router.get("/profiles/pretty", (req, res) => {
         res.render("tutorialProfileView.ejs", {profiles});
     })
     .catch((err) => {
+        res.send(`ERROR: DB Query Failed. <br> ${err}`);
+    });
+});
+
+router.get("/profiles/id/:id/pretty", (req, res) => {
+    // Query for specific profile matching with ID
+    const profileId = req.params.id;
+    ProfileORM.findOne({
+        where: {
+            id: profileId,
+        },
+    }).then((p) => {
+        res.render("tutorialSingleProfileView.ejs", {profile: p});
+    }).catch((err) => {
         res.send(`ERROR: DB Query Failed. <br> ${err}`);
     });
 });

@@ -16,7 +16,7 @@ app.set( "views", path.join( __dirname, "views" ) );
 app.set( "view engine", "ejs" );
 
 // app.use(express.static("/views"));
-app.use("/static", express.static("static"));
+app.use("/static", express.static(path.join( __dirname, "static" )));
 
 /**
  * API Routes
