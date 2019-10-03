@@ -36,4 +36,17 @@ router.get("/profiles", (req, res) => {
     });
 });
 
+// Demo Part 2 - Styled render with EJS templating view
+router.get("/profiles/pretty", (req, res) => {
+    // Get all Profile entries from DB
+    ProfileORM.findAll()
+    .then((profiles) => {
+        const formattedProfileNames = profiles.map((p: ProfileORM) => `<li>${p.lastName}, ${p.firstName}</li>`);
+        res.render("tutorialProfileView.ejs", {profiles});
+    })
+    .catch((err) => {
+        res.send(`ERROR: DB Query Failed. <br> ${err}`);
+    });
+});
+
 export default router;
